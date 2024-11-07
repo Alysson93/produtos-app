@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html' %}
+
+{% block body %}
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Register New Product</h2>
+        <form action="/add" method="post">
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="qtd">Quantity</label>
+                <input type="number" class="form-control" id="qtd" name="qtd" required min="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required step="0.01" min="0">
+            </div>
+            
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="has_discount" name="has_discount">
+                <label class="form-check-label" for="has_discount">Has Discount?</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="discount">Discount (%)</label>
+                <input type="number" class="form-control" id="discount" name="discount" step="0.01" min="0" max="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="image_url">Image URL</label>
+                <input type="url" class="form-control" id="image_url" name="image_url">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Product</button>
+        </form>
+    </div>
+
+{% endblock body %}
