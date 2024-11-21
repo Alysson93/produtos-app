@@ -17,7 +17,7 @@
                         <p class="mb-2"><strong>Quantity:</strong> {{ product.qtd }}</p>
                         {% if product.has_discount %}
                             <p class="mb-2"><strong>Discount:</strong> {{ product.discount }}%</p>
-                            <p class="text-danger"><strong>Discounted Price:</strong> ${{ product.price * (1 - product.discount / 100) | round(2) }}</p>
+                            <p class="text-danger"><strong>Discounted Price:</strong> ${{ product.price * (1 + product.discount / 100) | round(2) }}</p>
                         {% endif %}
                     </div>
                     <a href="{{url_for('edit_page', id=product.id)}}">
@@ -27,7 +27,7 @@
                         <button type="button" class="btn btn-danger">Deletar</button>
                     </a>
                     <br>                    
-                    <a href="/" class="btn btn-primary mt-4">Voltar ao catálogo</a>
+                    <a href="#" class="btn btn-primary mt-4">Voltar ao catálogo</a>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ def get_product_by_id(id: int, session: Session = Depends(get_session)):
     return product
 
 
-@router.post('/', status_code=HTTPStatus.CREATED)
+@router.post('/', status_code=HTTPStatus.OK)
 def create_product(
     product: ProductRequest, session: Session = Depends(get_session)
 ):
